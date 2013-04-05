@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<meta http-equiv="Content-Type" content="text/html; charset = UTF-8" />
+		<title>Beaker for Startup Weekend</title>
+		<meta name="description" content="Beaker for Startup Weekend">
+	    <meta name="author" content="Antonio Zugaldia">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css' rel='stylesheet' type='text/css'>
+		<link href='css/beaker.css' rel='stylesheet' type='text/css'>
+	</head> 
+	<body>
+
+	<div id="gConnect">
+	    <button class="g-signin"
+	        data-scope="https://www.googleapis.com/auth/plus.login"
+	        data-requestvisibleactions="http://schemas.google.com/AddActivity"
+	        data-clientId="980735822121.apps.googleusercontent.com"
+	        data-callback="onSignInCallback"
+	        data-theme="dark"
+	        data-cookiepolicy="single_host_origin">
+	    </button>
+    </div>
+
+    <div id="authOps" style="display:none">
+    	<!-- we should figure out a nice way to show this button -->
+	    <!-- <button id="disconnect" >Disconnect your Google account from this app</button> -->
+	    <div id="profile"></div>
+    </div>
+
+    <div id="loaderror">
+	    This section will be hidden by JQuery. If you can see this message, you
+	    may be viewing the file rather than running a web server.<br />
+	    The sample must be run from http or https. See instructions at
+	    <a href="https://developers.google.com/+/quickstart/javascript">
+	    https://developers.google.com/+/quickstart/javascript</a>.
+    </div>
+
+	<div id="extra-info">
+		<div>Welcome to Beaker, an experiment for the
+			<a href="http://startupweekend.org/" target="_blank">Startup Weekend</a> challenge
+			<span style="color: #aaa;">&sect;</span>
+			<a href="#" id="help-target">How does it work?</a>
+		</div>
+		<button id="share-post"
+				class="demo g-interactivepost"
+				data-contenturl="http://www.startupweekend.org/"
+				data-clientid="980735822121.apps.googleusercontent.com"
+				data-cookiepolicy="single_host_origin"
+				data-prefilltext="No talk, all action. Launch a startup in 54 hours."
+				data-calltoactionlabel="JOIN_ME"
+				data-calltoactionurl="http://www.startupweekend.org/events">
+				<span class="icon">&nbsp;</span>
+				<span id="share-post-label" class="label">It tastes better with friends</span>
+			</button>
+		<div id="event-info"></div>
+	</div>
+
+	<div id="canvas-container">
+		<div id="canvas"></div>
+	<div>
+
+	<div id="help-dialog" title="Instructions" style="display:none">
+  		<div class="help-question">Why, seriously, why?</div>
+  		<div class="help-response"><a href="https://www.facebook.com/startupweekend/app_183778415022263">I'm
+  			glad you asked.</a></div>
+
+  		<div class="help-question">What do the bubbles mean?</div>
+  		<div class="help-response">They represent all the events Startup Weekend have hosted during 2013 (quite a few, right?).
+  			Bigger bubbles represent recent or upcoming events.
+  			Smaller bubbles represent past events, still good to know about them if you want to do some networking.
+  			Pass your mouse over a bubble to get all the information about it.</div>
+
+  		<div class="help-question">Anything else I should know?</div>
+  		<div class="help-response">Oh, yes, have you tried tilting your laptop or tablet? It could be fun...</div>
+
+  		<div class="help-question">Hey, that was fun. What else?</div>
+  		<div class="help-response">I attended Startup Weekend DC, drop me a message if you want to connect.
+  			Also, please take a moment to sign in with your G+ acccount (rest assured we won't store any of your personal information, promise) and spread the word.</div>
+
+  		<div class="help-question">Is the source code available somewhere?</div>
+  		<div class="help-response">Well, it's all client side so feel free to &laquo;View Page Source&raquo; and grab it all.
+  			I'll eventually add it to GitHub to explain better how it works.</div>
+
+  		<div class="help-question">You wouldn't believe it but I got another question, how can I drop you a message?</div>
+  		<div class="help-response">Please use the contact form on
+  			<a href="http://zugaldia.wufoo.com/forms/antonio-zugaldia/">this page</a>.</div>
+	</div>
+
+	<script src="js/protoclass.js"></script>
+	<script src='js/box2d.js'></script>
+	<script type="text/javascript">
+	  (function() {
+	    var po = document.createElement('script');
+	    po.type = 'text/javascript'; po.async = true;
+	    po.src = 'https://plus.google.com/js/client:plusone.js';
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(po, s);
+	  })();
+	</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+	<script src='js/beaker.js'></script>
+
+	</body>
+</html>
